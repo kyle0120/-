@@ -1,0 +1,38 @@
+class Animal:
+    def __init__(self, name, legs):
+        self.name = name
+        self.legs = legs
+
+    def walk(self):
+        print(f"{self.name} walk on {self.legs} legs.")
+
+class Friend(Animal):
+    def __init__(self, name, legs, magic_skill):
+        super().__init__(name, legs)
+        self.magic_skill = magic_skill
+
+    def do_magic(self):
+        print(self.magic_skill)
+
+
+class Game:
+    def __init__(self, enemy_points, user_points):
+        self.enemy_points = enemy_points
+        self.user_points = user_points
+
+    def show_points(self):
+        print(f"Enemy : {self.enemy_points}, your point : {self.user_points}")
+
+
+dog = Animal("Dog", "four")
+aaa = Animal("aaa", "two")
+friend = Friend("Friend", "two", "Do Magic")
+game = Game(55, 1)
+
+
+dog.walk()
+aaa.walk()
+friend.walk()
+friend.do_magic()
+game.show_points()
+print(" 1")
