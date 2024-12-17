@@ -1,0 +1,40 @@
+# Item 클래스
+class Item:
+    def __init__(self, name, effect):
+        self.name = name
+        self.effect = effect
+
+    def use(self, user):
+        print(f"{user.name} used {self.name}. {self.effect}")
+
+
+# Character 클래스
+class Character:
+    def __init__(self, name, health, mana):
+        self.name = name
+        self.health = health
+        self.mana = mana
+
+    def show_info(self):
+        return f"Name: {self.name}, Health: {self.health}, Mana: {self.mana}"
+
+
+# 아이템과 캐릭터 초기화
+sword = Item("Sword", "Deals damage to enemies.")
+potion = Item("Potion", "Restores health.")
+
+user = Character("User", 100, 50)
+friend = Character("Friend", 120, 60)
+
+# 동작 수행
+print("Before using items:")
+print(user.show_info())
+print(friend.show_info())
+
+print("\nUsing items:")
+sword.use(user)
+potion.use(friend)
+
+print("\nAfter using items (state not changed as effects aren't applied in this version):")
+print(user.show_info())
+print(friend.show_info())
